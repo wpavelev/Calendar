@@ -124,6 +124,37 @@ public class CalendarUtil {
         return eventInfoList;
     }
 
+    public List<EventInfo> getEventList() {
+        //run query
+        Cursor cur = null;
+
+
+        ContentResolver cr = mContext.getContentResolver();
+        Uri uri = CalendarContract.Events.CONTENT_URI;
+
+        cur = cr.query(uri, EVENT_PROJECTION, null, null, CalendarContract.Events.DTSTART);
+
+
+        // Use the cursor to step through the returned records
+        List<EventInfo> eventInfoList = new ArrayList<>();
+        while (cur.moveToNext()) {
+
+            // Get the field values
+            long id = cur.getLong(cur.getColumnIndex(CalendarContract.Events._ID));
+            String title = cur.getString(cur.getColumnIndex(CalendarContract.Events.TITLE));
+            long start = cur.getLong(cur.getColumnIndex(CalendarContract.Events.DTSTART));
+            long end = cur.getLong(cur.getColumnIndex(CalendarContract.Events.DTEND));
+
+            EventInfo eventInfo = new EventInfo(id, title, start, end);
+
+            eventInfoList.add(eventInfo);
+
+        }
+
+        cur.close();
+        return eventInfoList;
+    }
+
     private void updateEventTitle(long eventId, String title) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(CalendarContract.Events.TITLE, title);
