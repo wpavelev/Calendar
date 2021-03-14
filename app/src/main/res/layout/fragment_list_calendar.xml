@@ -2,12 +2,12 @@
 <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
-    android:name="de.wpavelev.calendar.CalEventFragment"
+    android:id="@+id/rv_event_list"
+    android:name="de.wpavelev.calendar.CalendarInfoFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".CalEventFragment"
-    tools:listitem="@layout/item_event_list" />
+    tools:context=".CalendarListFragment"
+    tools:listitem="@layout/item_calendar_list" />

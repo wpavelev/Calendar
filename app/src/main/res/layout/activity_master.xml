@@ -10,8 +10,6 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
 
-
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -27,7 +25,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimaryDark"
                 app:title="@string/app_name"
-                app:layout_scrollFlags="enterAlways|scroll" />
+                app:layout_scrollFlags="enterAlways" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,15 +36,16 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nvView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="@android:color/white"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/menu" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nvView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
 
+        android:background="@android:color/white"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu_nav" />
 </androidx.drawerlayout.widget.DrawerLayout>

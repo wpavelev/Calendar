@@ -15,14 +15,15 @@
         <activity
             android:name=".MasterActivity"
             android:label="@string/title_activity_master"
-            android:theme="@style/Theme.Calendar.NoActionBar" />
-        <activity android:name=".MainActivity">
+            android:theme="@style/Theme.Calendar.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>
